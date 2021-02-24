@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/questionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -26,7 +26,7 @@
         android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/questionTextView"
         app:srcCompat="@drawable/lune_argent" />
 
     <RadioGroup
@@ -41,28 +41,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView">
-
-        <RadioButton
-            android:id="@+id/radio_button_terre"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Terre" />
-
-        <RadioButton
-            android:id="@+id/radio_button_soleil"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Soleil" />
-
-        <RadioButton
-            android:id="@+id/radio_button_lune"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="20dp"
-            android:text="Lune" />
-    </RadioGroup>
+        app:layout_constraintTop_toBottomOf="@+id/imageView"/>
 
     <Button
         android:id="@+id/submitButton"
