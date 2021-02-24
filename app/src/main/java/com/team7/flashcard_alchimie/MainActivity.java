@@ -1,10 +1,13 @@
 package com.team7.flashcard_alchimie;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -19,13 +22,13 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 
+import static android.view.LayoutInflater.*;
+import static androidx.appcompat.app.AlertDialog.*;
+
 public class MainActivity extends AppCompatActivity {
 
     private RadioGroup radioGroup;
     private Button submit;
-    private ArrayList<String> answers;
-    private ArrayList<String> randomAnswers;
-    private int randomInt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         answerss.add("or");
         answerss.add("argent");
         Collections.shuffle(answerss);
-        FlashCard flashCard = new FlashCard("A quoi correspond ceci en Alchimie ?", R.drawable.lune_argent, answerss, "argent");
+        FlashCard flashCard = new FlashCard("A quoi correspond ceci en Alchimie ?", R.drawable.pierre_philosophale_, answerss, "argent");
         TextView question = findViewById(R.id.questionTextView);
         ImageView imageView = findViewById(R.id.imageView);
         question.setText(flashCard.question);
@@ -82,6 +85,18 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(MainActivity.this, "Tu pue la merde ! \nLa bonne réponse c'est " + finalGoodRadioButton.getText(), Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ImageView image = new ImageView(MainActivity.this);
+                image.setImageResource(flashCard.image);
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this).setView(image);
+                builder.create().show();
+
             }
         });
     }
