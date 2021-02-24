@@ -44,35 +44,23 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView">
 
         <RadioButton
-            android:id="@+id/radio_button_1"
+            android:id="@+id/radio_button_terre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Terre" />
 
         <RadioButton
-            android:id="@+id/radio_button_invisible"
+            android:id="@+id/radio_button_soleil"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:clickable="false"
-            android:visibility="invisible" />
-
-        <RadioButton
-            android:id="@+id/radio_button_2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
             android:text="Soleil" />
 
         <RadioButton
-            android:id="@+id/radio_button_invisible2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clickable="false"
-            android:visibility="invisible" />
-
-        <RadioButton
-            android:id="@+id/radio_button_3"
+            android:id="@+id/radio_button_lune"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
             android:text="Lune" />
     </RadioGroup>
 
