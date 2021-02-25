@@ -3,7 +3,6 @@ package com.team7.flashcard_alchimie;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
 public class FlashCard implements Parcelable {

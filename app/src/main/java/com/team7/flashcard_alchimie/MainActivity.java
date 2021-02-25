@@ -4,10 +4,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -35,11 +33,14 @@ public class MainActivity extends AppCompatActivity {
 
         Intent srcIntent = getIntent();
         ArrayList<FlashCard> flashCards = srcIntent.getParcelableArrayListExtra("flashCards");
+        Log.i("MainActivity", "list des flashcards : " + flashCards);
         int numFlashCard = srcIntent.getIntExtra("numeroFlashCard", 0);
+        Log.i("MainActivity", "id de la flashcard en cours : " + numFlashCard);
 
-        setTitle("FlashCard "+ numFlashCard+1 + "/" + flashCards.size()+1);
+        setTitle("FlashCard "+ numFlashCard + "/" + flashCards.size());
 
         FlashCard flashCard = flashCards.get(numFlashCard);
+        Log.i("MainActivity", "flashCard en cours : " + flashCard);
         imageView.setImageResource(flashCard.image);
 
         RadioButton goodRadioButton = null;
@@ -47,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
             RadioButton myButton = new RadioButton(MainActivity.this);
             myButton.setText(flashCard.answers.get(j));
             if (myButton.getText().equals(flashCard.goodAnswer)){
+                Log.i("MainActivity", "bonne réponse existe");
                 goodRadioButton = myButton;
             }
             ConstraintLayout.LayoutParams constraintLayout = new ConstraintLayout.LayoutParams(RadioGroup.LayoutParams.MATCH_PARENT, RadioGroup.LayoutParams.WRAP_CONTENT);

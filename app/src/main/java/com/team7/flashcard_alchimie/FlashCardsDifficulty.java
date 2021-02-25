@@ -1,7 +1,5 @@
 package com.team7.flashcard_alchimie;
 
-import android.util.Log;
-
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -14,18 +12,22 @@ public class FlashCardsDifficulty {
         answersArgent.add("or");
         answersArgent.add("argent");
         Collections.shuffle(answersArgent);
+        ArrayList<String> answersPierrePhilosophale = new ArrayList<>();
+        answersPierrePhilosophale.add("pierre philosophale");
+        answersPierrePhilosophale.add("or");
+        answersPierrePhilosophale.add("argent");
+        Collections.shuffle(answersPierrePhilosophale);
+        ArrayList<String> answersPlomb = new ArrayList<>();
+        answersPlomb.add("terre");
+        answersPlomb.add("plomb");
+        answersPlomb.add("argent");
+        Collections.shuffle(answersPlomb);
 
         ArrayList<FlashCard> flashCards = new ArrayList<>();
 
         flashCards.add(new FlashCard("A quoi correspond ceci en Alchimie ?", R.drawable.lune_argent, answersArgent, "argent"));
-/*
-        flashCards.add(flashCard = new FlashCard("A quoi correspond ceci en Alchimie ?", R.drawable.pierre_philosophale_, answersPierrePhilosophale, "pierre philosophale"));
-        flashCards.add(flashCard = new FlashCard("A quoi correspond ceci en Alchimie ?", R.drawable.plomb_saturne, answersPlomb, "plomb"));
-        flashCards.add(flashCard = new FlashCard("A quoi correspond ceci en Alchimie ?", R.drawable.salpetre, answersSalpetre, "salpetre"));
-        flashCards.add(flashCard = new FlashCard("A quoi correspond ceci en Alchimie ?", R.drawable.soufre, answersSoufre, "soufre"));
-        flashCards.add(flashCard = new FlashCard("A quoi correspond ceci en Alchimie ?", R.drawable.terre, answersTerre, "terre"));
-        flashCards.add(flashCard = new FlashCard("A quoi correspond ceci en Alchimie ?", R.drawable.vitrol, answersVitrol, "vitrol"));
-*/
+        flashCards.add(new FlashCard("A quoi correspond ceci en Alchimie ?", R.drawable.pierre_philosophale_, answersPierrePhilosophale, "pierre philosophale"));
+        flashCards.add(new FlashCard("A quoi correspond ceci en Alchimie ?", R.drawable.plomb_saturne, answersPlomb, "plomb"));
 
         Collections.shuffle(flashCards);
 
