@@ -27,10 +27,10 @@
         app:layout_constraintTop_toBottomOf="@+id/quizzButton" />
 
     <Button
-        android:id="@+id/RecyclerButton"
+        android:id="@+id/recyclerButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="vue d'ensemble"
+        android:text="Questions "
         android:textColor="#000000"
         app:backgroundTint="#00C1AF"
         app:layout_constraintBottom_toTopOf="@+id/quizzButton"

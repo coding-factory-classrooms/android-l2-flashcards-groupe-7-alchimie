@@ -8,20 +8,12 @@ public class FlashCard {
     ArrayList<String> answers;
     String goodAnswer;
 
-    public String getQuestion() {
-        return question;
-    }
-
     public int getImage() {
         return image;
     }
 
     public ArrayList<String> getAnswers() {
         return answers;
-    }
-
-    public String getGoodAnswer() {
-        return goodAnswer;
     }
 
     public FlashCard(String question, int image, ArrayList<String> answers, String goodAnswer) {
