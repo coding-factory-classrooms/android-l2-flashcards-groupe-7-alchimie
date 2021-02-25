@@ -25,7 +25,7 @@ public class FlashCardsDifficulty {
 
         ArrayList<FlashCard> flashCards = new ArrayList<>();
 
-        flashCards.add(new FlashCard("A quoi correspond ceci en Alchimie ?", R.drawable.lune_argent, answersArgent, "argent"));
+        flashCards.add(new FlashCard("A quoi correspond ceci en Alchimie ?", R.drawable.argent_lune, answersArgent, "argent"));
         flashCards.add(new FlashCard("A quoi correspond ceci en Alchimie ?", R.drawable.pierre_philosophale_, answersPierrePhilosophale, "pierre philosophale"));
         flashCards.add(new FlashCard("A quoi correspond ceci en Alchimie ?", R.drawable.plomb_saturne, answersPlomb, "plomb"));
 
@@ -80,7 +80,7 @@ public class FlashCardsDifficulty {
 
         ArrayList<FlashCard> flashCards = new ArrayList<>();
 
-        flashCards.add(new FlashCard("A quoi correspond ceci en Alchimie ?", R.drawable.lune_argent, answersArgent, "argent"));
+        flashCards.add(new FlashCard("A quoi correspond ceci en Alchimie ?", R.drawable.argent_lune, answersArgent, "argent"));
         flashCards.add(new FlashCard("A quoi correspond ceci en Alchimie ?", R.drawable.mercure, answersMercure, "mercure"));
         flashCards.add(new FlashCard("A quoi correspond ceci en Alchimie ?", R.drawable.air, answersAir, "air"));
         flashCards.add(new FlashCard("A quoi correspond ceci en Alchimie ?", R.drawable.arsenic, answersArcenic, "arsenic"));
@@ -178,7 +178,7 @@ public class FlashCardsDifficulty {
 
         ArrayList<FlashCard> flashCards = new ArrayList<>();
 
-        flashCards.add(new FlashCard("A quoi correspond ceci en Alchimie ?", R.drawable.lune_argent, answersArgent, "argent"));
+        flashCards.add(new FlashCard("A quoi correspond ceci en Alchimie ?", R.drawable.argent_lune, answersArgent, "argent"));
         flashCards.add(new FlashCard("A quoi correspond ceci en Alchimie ?", R.drawable.mercure, answersMercure, "mercure"));
         flashCards.add(new FlashCard("A quoi correspond ceci en Alchimie ?", R.drawable.air, answersAir, "air"));
         flashCards.add(new FlashCard("A quoi correspond ceci en Alchimie ?", R.drawable.arsenic, answersArcenic, "arsenic"));
