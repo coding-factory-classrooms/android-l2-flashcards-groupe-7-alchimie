@@ -28,7 +28,7 @@ public class FlashCardAdapter extends RecyclerView.Adapter<FlashCardAdapter.View
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.activity_main, parent, false);
+                .inflate(R.layout.item_flashcard, parent, false);
         return new ViewHolder(view);
     }
 

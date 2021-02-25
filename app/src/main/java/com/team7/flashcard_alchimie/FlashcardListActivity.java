@@ -1,3 +1,4 @@
+
 package com.team7.flashcard_alchimie;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,7 +13,7 @@ import java.util.List;
 public class FlashcardListActivity extends AppCompatActivity {
 
     private List<FlashCard> flashcard;
-    private FlashcardAdapter adapter;
+    private FlashCardAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,9 +30,9 @@ public class FlashcardListActivity extends AppCompatActivity {
         for (int i= 0; i< 30; i++){
            flashcard.add(new FlashCard("A quoi correspond ceci en Alchimie ?", R.drawable.lune_argent,answersArgent, "argent"));
         }
-        adapter = new FlashcardAdapter(flashcard);
+        adapter = new FlashCardAdapter(flashcard);
 
-        RecyclerView recyclerView = findViewById(R.id.);
+        RecyclerView recyclerView = findViewById(R.id.RecyclerView);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
