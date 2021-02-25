@@ -42,9 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         Intent srcIntent = getIntent();
         int numFlashCard = srcIntent.getIntExtra("numFlashCard", 0);
-        Log.i("MainActivity", "list: " + flashCardArrayList);
         FlashCard flashCard = flashCardArrayList.get(numFlashCard);
-        Log.i("MainActivity", "ok: " + numFlashCard);
         imageView.setImageResource(flashCard.image);
 
         if (flashCard == null){
@@ -104,7 +102,6 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, MainActivity.class);
         numeroFlashCard = numeroFlashCard+1;
         intent.putExtra(String.valueOf(numeroFlashCard), numeroFlashCard);
-        Log.i("MainActivity", "test: "+numeroFlashCard);
         startActivity(intent);
     }
 }
