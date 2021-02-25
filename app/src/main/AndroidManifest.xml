@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FlashCard_Alchimie">
         <activity android:name=".AboutActivity"></activity>
-        <activity android:name=".HomePage">
+        <activity android:name=".HomePageActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
