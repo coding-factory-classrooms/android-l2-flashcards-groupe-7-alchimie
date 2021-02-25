@@ -4,62 +4,57 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
-import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
-
-import static android.view.LayoutInflater.*;
-import static androidx.appcompat.app.AlertDialog.*;
 
 public class MainActivity extends AppCompatActivity {
 
     private RadioGroup radioGroup;
     private Button submit;
+    private TextView question;
+    private ImageView imageView;
+    private int numeroFlashCard = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ArrayList<String> answerss = new ArrayList<>();
-        answerss.add("terre");
-        answerss.add("or");
-        answerss.add("argent");
-        Collections.shuffle(answerss);
-        FlashCard flashCard = new FlashCard("A quoi correspond ceci en Alchimie ?", R.drawable.pierre_philosophale_, answerss, "argent");
-        TextView question = findViewById(R.id.questionTextView);
-        ImageView imageView = findViewById(R.id.imageView);
-        question.setText(flashCard.question);
-        imageView.setImageResource(flashCard.image);
-
+        question = findViewById(R.id.questionTextView);
+        imageView = findViewById(R.id.imageView);
         submit = findViewById(R.id.submitButton);
         radioGroup = findViewById(R.id.radioGroup);
-        //answers = new ArrayList<>(Arrays.asList("air", "arsenic", "cuivre", "venus", "eau", "etain", "jupiter", "fer", "mars", "feu", "lune", "argent", "mercure", "or", "soleil", "pierre philosophale", "plomb", "sature", "salpetre", "soufre", "terre", "vitrol"));
 
-        /*randomAnswers = new ArrayList<>();
-        while (randomAnswers.size() < 3){
-            randomInt = (int)(Math.random() * ((answers.size()) + 1));
-            randomAnswers.add(answers.get(randomInt));
-        }*/
+        FlashCards flashCards = new FlashCards();
+        ArrayList<FlashCard> listRandomFlashCards = flashCards.randomFlashCards();
+        ArrayList<FlashCard> flashCardArrayList = listRandomFlashCards;
+
+        Intent srcIntent = getIntent();
+        int numFlashCard = srcIntent.getIntExtra("numFlashCard", 0);
+        Log.i("MainActivity", "list: " + flashCardArrayList);
+        FlashCard flashCard = flashCardArrayList.get(numFlashCard);
+        Log.i("MainActivity", "ok: " + numFlashCard);
+        imageView.setImageResource(flashCard.image);
+
+        if (flashCard == null){
+            Log.e("randomFlashCard", "C'est la merde...");
+        }
 
         RadioButton goodRadioButton = null;
-        for (int i = 0; i < flashCard.answers.size(); i++) {
+        for (int j = 0; j < flashCard.answers.size(); j++) {
             RadioButton myButton = new RadioButton(MainActivity.this);
-            myButton.setText(flashCard.answers.get(i));
+            myButton.setText(flashCard.answers.get(j));
             if (myButton.getText()==flashCard.goodAnswer){
                 goodRadioButton = myButton;
             }
@@ -79,15 +74,20 @@ public class MainActivity extends AppCompatActivity {
                 if (checkedRadioButtonId == View.NO_ID){
                     Toast.makeText(MainActivity.this, "Il faut faire des choix dans la vie", Toast.LENGTH_SHORT).show();
                     return;
-                }
-                if (checkedRadioButtonId == finalGoodRadioButton.getId()){
+                } else if (checkedRadioButtonId == finalGoodRadioButton.getId()){
                     Toast.makeText(MainActivity.this, "GG à toi mon bro !", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(MainActivity.this, "Tu pue la merde ! \nLa bonne réponse c'est " + finalGoodRadioButton.getText(), Toast.LENGTH_SHORT).show();
                 }
+                submit.setText("question suivante");
+                submit.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Next();
+                    }
+                });
             }
         });
-
 
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,8 +96,15 @@ public class MainActivity extends AppCompatActivity {
                 image.setImageResource(flashCard.image);
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this).setView(image);
                 builder.create().show();
-
             }
         });
+    }
+
+    void Next(){
+        Intent intent = new Intent(MainActivity.this, MainActivity.class);
+        numeroFlashCard = numeroFlashCard+1;
+        intent.putExtra(String.valueOf(numeroFlashCard), numeroFlashCard);
+        Log.i("MainActivity", "test: "+numeroFlashCard);
+        startActivity(intent);
     }
 }

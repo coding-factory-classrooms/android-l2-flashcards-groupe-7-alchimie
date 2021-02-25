@@ -27,7 +27,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/questionTextView"
-        app:srcCompat="@drawable/lune_argent" />
+        app:srcCompat="@drawable/air" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
