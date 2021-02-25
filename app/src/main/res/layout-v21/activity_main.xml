@@ -33,7 +33,7 @@
         app:srcCompat="@drawable/lune_argent" />
 
     <RadioGroup
-        android:buttonTint="@color/purple_200"
+        android:buttonTint="@color/black"
         android:id="@+id/radioGroup"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

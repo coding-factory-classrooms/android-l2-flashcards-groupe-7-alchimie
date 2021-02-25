@@ -76,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 int checkedRadioButtonId = radioGroup.getCheckedRadioButtonId();
+
                 if (checkedRadioButtonId == View.NO_ID){
                     Toast.makeText(MainActivity.this, "Il faut faire des choix dans la vie", Toast.LENGTH_SHORT).show();
                     return;
