@@ -93,10 +93,10 @@ public class FlashcardListActivity extends AppCompatActivity {
         answersVitrol.add("vitrol");
         Collections.shuffle(answersVitrol);
 
-        flashCards.add(new FlashCard("A quoi correspond ceci en Alchimie ?", R.drawable.lune_argent, answersArgent, "argent"));
+        flashCards.add(new FlashCard("A quoi correspond ceci en Alchimie ?", R.drawable.argent_lune, answersArgent, "argent"));
         flashCards.add(new FlashCard("A quoi correspond ceci en Alchimie ?", R.drawable.mercure, answersMercure, "mercure"));
         flashCards.add(new FlashCard("A quoi correspond ceci en Alchimie ?", R.drawable.air, answersAir, "air"));
-        flashCards.add(new FlashCard("A quoi correspond ceci en Alchimie ?", R.drawable.arsenic, answersArcenic, "arsenic"));
+        flashCards.add(new FlashCard("A quoi correspond ceci en Alchimie ?", R.drawable.arsenic, answersArcenic, "arcenic"));
         flashCards.add(new FlashCard("A quoi correspond ceci en Alchimie ?", R.drawable.cuivre_venus, answersCuivre, "cuivre"));
         flashCards.add(new FlashCard("A quoi correspond ceci en Alchimie ?", R.drawable.eau, answersEau, "eau"));
         flashCards.add(new FlashCard("A quoi correspond ceci en Alchimie ?", R.drawable.etain_jupiter, answersEtain, "etain"));

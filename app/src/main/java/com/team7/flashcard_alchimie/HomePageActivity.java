@@ -84,5 +84,13 @@ public class HomePageActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        Button recyclerButton = findViewById(R.id.recyclerButton);
+        recyclerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomePageActivity.this, FlashcardListActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
