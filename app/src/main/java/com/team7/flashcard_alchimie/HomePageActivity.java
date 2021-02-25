@@ -76,5 +76,13 @@ public class HomePageActivity extends AppCompatActivity {
                 });
             }
         });
+        Button aboutButton = findViewById(R.id.aboutButton);
+        aboutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomePageActivity.this, AboutActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

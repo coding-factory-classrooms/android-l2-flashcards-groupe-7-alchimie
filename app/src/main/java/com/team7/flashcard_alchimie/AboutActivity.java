@@ -20,8 +20,4 @@ public class AboutActivity extends AppCompatActivity {
         versionTextView.setText(versionName);
 
     }
-
-
-
-
 }
