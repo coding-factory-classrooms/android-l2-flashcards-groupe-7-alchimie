@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<FlashCard> flashCardArrayList = listRandomFlashCards;
 
         Intent srcIntent = getIntent();
+        setTitle("FlashCard "+ numeroFlashCard+1 + "/" + flashCardArrayList.size()+1);
         int numFlashCard = srcIntent.getIntExtra("numFlashCard", 0);
         FlashCard flashCard = flashCardArrayList.get(numFlashCard);
         imageView.setImageResource(flashCard.image);
