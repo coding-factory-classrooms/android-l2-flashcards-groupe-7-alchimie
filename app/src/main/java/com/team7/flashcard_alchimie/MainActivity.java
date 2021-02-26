@@ -21,6 +21,9 @@ public class MainActivity extends AppCompatActivity {
     private RadioGroup radioGroup;
     private Button submit;
     private ImageView imageView;
+    private int score;
+    private ArrayList<FlashCard> flashCards;
+    private int numFlashCard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,15 +35,14 @@ public class MainActivity extends AppCompatActivity {
         submit = findViewById(R.id.submitButton);
 
         Intent srcIntent = getIntent();
-        ArrayList<FlashCard> flashCards = srcIntent.getParcelableArrayListExtra("flashCards");
-        Log.i("MainActivity", "list des flashcards : " + flashCards);
-        int numFlashCard = srcIntent.getIntExtra("numeroFlashCard", 0);
-        Log.i("MainActivity", "id de la flashcard en cours : " + numFlashCard);
+        flashCards = srcIntent.getParcelableArrayListExtra("flashCards");
+        numFlashCard = srcIntent.getIntExtra("numeroFlashCard", 0);
+        score = srcIntent.getIntExtra("score", 0);
+        String difficulty = srcIntent.getStringExtra("difficulty");
 
         setTitle("FlashCard "+ numFlashCard + "/" + flashCards.size());
 
         FlashCard flashCard = flashCards.get(numFlashCard);
-        Log.i("MainActivity", "flashCard en cours : " + flashCard);
         imageView.setImageResource(flashCard.image);
 
         RadioButton goodRadioButton = null;
@@ -72,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
         if(goodRadioButton==null){
             Log.e("MainActivity", "Problème ! null");
         }
+
         RadioButton finalGoodRadioButton = goodRadioButton;
         int finalNumFlashCard = numFlashCard;
         submit.setOnClickListener(new View.OnClickListener() {
@@ -84,19 +87,40 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 } else if (checkedRadioButtonId == finalGoodRadioButton.getId()){
                     Toast.makeText(MainActivity.this, "Bravo, c'est la bonne réponse.", Toast.LENGTH_SHORT).show();
+                    score++;
                 } else {
                     Toast.makeText(MainActivity.this, "Ce n'est pas la bonne réponse essaye encore.\nLa bonne réponse était : " + finalGoodRadioButton.getText(), Toast.LENGTH_SHORT).show();
                 }
-                submit.setText("question suivante");
-                submit.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(MainActivity.this, MainActivity.class);
-                        intent.putExtra("flashCards", flashCards);
-                        intent.putExtra("numeroFlashCard", finalNumFlashCard);
-                        startActivity(intent);
-                    }
-                });
+                if (finalNumFlashCard == flashCards.size()){
+                    submit.setText("voir les resultats");
+                    submit.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(MainActivity.this, ResultActivity.class);
+                            intent.putExtra("score", score + "/" + flashCards.size());
+                            intent.putExtra("difficulty","Difficulté : "+difficulty);
+                            Log.i("MainActivity","score = " + score);
+                            Log.i("MainActivity","total = " + flashCards.size());
+                            int pourcent = score*100/flashCards.size();
+                            intent.putExtra("pourcent", pourcent+"%");
+                            startActivity(intent);
+                        }
+                    });
+                } else {
+                    submit.setText("question suivante");
+                    submit.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                            intent.putExtra("flashCards", flashCards);
+                            intent.putExtra("numeroFlashCard", finalNumFlashCard);
+                            intent.putExtra("score", score);
+                            intent.putExtra("difficulty",difficulty);
+                            startActivity(intent);
+                        }
+                    });
+
+                }
             }
         });
     }
