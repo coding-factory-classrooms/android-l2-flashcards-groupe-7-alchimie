@@ -46,6 +46,7 @@ public class HomePageActivity extends AppCompatActivity {
                         intent.putExtra("difficulty", "easy");
                         intent.putExtra("flashCards", randomFlashCardsEasy);
                         intent.putExtra("numeroFlashCard", 0);
+                        intent.putExtra("score", 0);
                         startActivity(intent);
                     }
                 });
@@ -55,10 +56,10 @@ public class HomePageActivity extends AppCompatActivity {
                         Log.i("HomePage", "difficulty: medium" );
                         ArrayList<FlashCard> randomFlashCardsMedium = flashCards.randomFlashCardsMedium();
                         Intent intent = new Intent(HomePageActivity.this, MainActivity.class);
-                        Log.i("HomePage", "list: " + randomFlashCardsMedium);
                         intent.putExtra("difficulty", "medium");
                         intent.putExtra("flashCards", randomFlashCardsMedium);
                         intent.putExtra("numeroFlashCard", 0);
+                        intent.putExtra("score", 0);
                         startActivity(intent);
                     }
                 });
@@ -71,6 +72,7 @@ public class HomePageActivity extends AppCompatActivity {
                         intent.putExtra("difficulty", "hard");
                         intent.putExtra("flashCards", randomFlashCardsHard);
                         intent.putExtra("numeroFlashCard", 0);
+                        intent.putExtra("score", 0);
                         startActivity(intent);
                     }
                 });
