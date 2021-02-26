@@ -3,12 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="100dp">
+    android:layout_height="55dp"
+    android:background="#000000">
 
     <ImageView
         android:id="@+id/symbolImageView"
         android:layout_width="100dp"
         android:layout_height="50dp"
+        android:background="@drawable/parchemin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -16,8 +18,14 @@
 
     <TextView
         android:id="@+id/answersTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#5E5E5E"
+        android:fontFamily="sans-serif-black"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        android:typeface="monospace"
         app:layout_constraintBottom_toBottomOf="@+id/symbolImageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/symbolImageView"

@@ -18,35 +18,65 @@
 
     <TextView
         android:id="@+id/nametextView"
+        style="@android:style/Widget.TextView.PopupMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:autoText="false"
+        android:drawingCacheQuality="high"
+        android:fontFamily="@font/aclonica"
         android:text="Hugo , Houssam et Erwan"
+        android:textAllCaps="false"
+        android:textColor="#780D8A"
+        android:textSize="14sp"
+        android:textStyle="bold|italic"
+        android:translationX="20dp"
+        android:typeface="serif"
+        app:drawableTint="#FF00FB"
+        app:drawableTintMode="add"
         app:layout_constraintBottom_toTopOf="@+id/nameGametextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="25dp" />
 
     <TextView
         android:id="@+id/nameGametextView"
+        style="@android:style/Widget.TextView.PopupMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:autoText="false"
+        android:drawingCacheQuality="high"
+        android:fontFamily="@font/aclonica"
         android:text="Flashcards Alchimie"
+        android:textAllCaps="false"
+        android:textColor="#780D8A"
+        android:textSize="14sp"
+        android:textStyle="bold|italic"
+        android:translationX="20dp"
+        android:typeface="serif"
+        app:drawableTint="#FF00FB"
+        app:drawableTintMode="add"
         app:layout_constraintBottom_toTopOf="@+id/versiontextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nametextView" />
+        app:layout_constraintTop_toBottomOf="@+id/nametextView"
+        tools:layout_editor_absoluteX="52dp" />
 
     <TextView
         android:id="@+id/versiontextView"
+        style="@android:style/Widget.TextView.PopupMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:autoText="false"
+        android:drawingCacheQuality="high"
+        android:fontFamily="@font/aclonica"
         android:text="V1.0.0"
+        android:textAllCaps="false"
+        android:textColor="#780D8A"
+        android:textSize="14sp"
+        android:textStyle="bold|italic"
+        android:translationX="10dp"
+        android:typeface="serif"
+        app:drawableTint="#FF00FB"
+        app:drawableTintMode="add"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameGametextView" />
+        app:layout_constraintTop_toBottomOf="@+id/nameGametextView"
+        tools:layout_editor_absoluteX="87dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
